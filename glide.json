@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "column",
+    "name": "html2canvas",
+    "description": "HTML2Canvas",
+    "author": "Darren Alderman <darren@amblemind.com>",
+    "params": [
+      {
+        "name": "html",
+        "displayName": "HTML (required)",
+        "type": "string"
+      }
+    ],
+    "result": {
+      "type": "string"
+    }
+  }
+]
