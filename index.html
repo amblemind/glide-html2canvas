@@ -8,10 +8,35 @@
 </head>
 
 <body>
-  <script src="function.js"></script>
-  <script src="driver.js"></script>
   <h1>HTML2Canvas</h1>
   <p>Darren Alderman's implementation of <a href="https://html2canvas.hertzen.com/">HTML2Canvas</a> for <a
       href="https://darrens.link/glide" target="_blank">Glide Apps.</a></p>
+
+  
+  <!-- Text box for HTML input -->
+  <textarea id="htmlInput" rows="10" cols="50"></textarea><br>
+
+  <!-- Button to trigger the conversion -->
+  <button onclick="convertHtmlToImage()">Convert HTML to Image</button>
+
+  <!-- Script to handle the conversion -->
+  <script>
+    async function convertHtmlToImage() {
+      const html = document.getElementById('htmlInput').value;
+
+      // Use the function from function.js
+      const image = await window.function({value: html});
+
+      if (image) {
+        // Create and display the image element
+        const imgElement = new Image();
+        imgElement.src = image;
+        document.body.appendChild(imgElement);
+      }
+    }
+  </script>
+  
+  <script src="function.js"></script>
+  <script src="driver.js"></script>
 </body>
 </html>
