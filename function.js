@@ -13,12 +13,15 @@ window.function = async function(html) {
   // Convert HTML to image
   try {
     const canvas = await html2canvas(tempDiv);
-    const image = canvas.toDataURL('image/png');
+    
+    // Get base64 encoded image
+    const imageBase64 = canvas.toDataURL('image/png');
+    
     document.body.removeChild(tempDiv); // Clean up
-    return image;
+    return imageBase64; // Return the base64 encoded image
   } catch (error) {
     console.error('Error converting HTML to image:', error);
     document.body.removeChild(tempDiv); // Clean up
-    return undefined;
+    return "ERROR";
   }
 };
